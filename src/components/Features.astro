@@ -57,7 +57,7 @@ const features: Feature[] = [
 <style>
     .features {
         padding: 8rem 2rem;
-        background: oklch(0.1 0.02 280);
+        background: var(--bg-elevated);
         position: relative;
     }
 
@@ -70,18 +70,15 @@ const features: Feature[] = [
         font-family: "Playfair Display", serif;
         font-size: clamp(2rem, 5vw, 3rem);
         font-weight: 600;
-        color: oklch(0.98 0.01 280);
+        color: var(--text-primary);
         margin: 0 0 0.75rem;
         text-align: center;
     }
 
     .features-subheading {
-        font-family:
-            system-ui,
-            -apple-system,
-            sans-serif;
+        font-family: system-ui, -apple-system, sans-serif;
         font-size: 1.125rem;
-        color: oklch(0.55 0.02 280);
+        color: var(--text-secondary);
         margin: 0 0 4rem;
         text-align: center;
     }
@@ -95,12 +92,8 @@ const features: Feature[] = [
     .feature-card {
         position: relative;
         padding: 2rem;
-        background: linear-gradient(
-            135deg,
-            oklch(0.12 0.02 280),
-            oklch(0.1 0.02 280)
-        );
-        border: 1px solid oklch(0.18 0.02 280);
+        background: var(--bg-card);
+        border: 1px solid var(--border);
         border-radius: 1rem;
         transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         animation: slideUp 0.8s ease-out backwards;
@@ -109,38 +102,32 @@ const features: Feature[] = [
 
     .feature-card:hover {
         transform: translateY(-4px);
-        border-color: oklch(0.25 0.02 280);
-        box-shadow: 0 20px 40px -10px oklch(0 0 0 / 0.3);
+        border-color: var(--text-muted);
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
     }
 
     .feature-number {
         font-family: "JetBrains Mono", monospace;
         font-size: 0.75rem;
         font-weight: 500;
-        color: oklch(0.4 0.02 280);
+        color: var(--text-muted);
         margin-bottom: 1.5rem;
         letter-spacing: 0.1em;
     }
 
     .feature-title {
-        font-family:
-            system-ui,
-            -apple-system,
-            sans-serif;
+        font-family: system-ui, -apple-system, sans-serif;
         font-size: 1.25rem;
         font-weight: 600;
-        color: oklch(0.95 0.01 280);
+        color: var(--text-primary);
         margin: 0 0 0.75rem;
     }
 
     .feature-description {
-        font-family:
-            system-ui,
-            -apple-system,
-            sans-serif;
+        font-family: system-ui, -apple-system, sans-serif;
         font-size: 0.9375rem;
         font-weight: 400;
-        color: oklch(0.6 0.02 280);
+        color: var(--text-secondary);
         margin: 0;
         line-height: 1.6;
     }

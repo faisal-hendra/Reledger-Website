@@ -2,6 +2,16 @@
   --font-display: 'Playfair Display', serif;
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+  
+  --bg-primary: #191919;
+  --bg-elevated: #232323;
+  --bg-card: #262626;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a3a3a3;
+  --text-muted: #737373;
+  --accent: #e5c07b;
+  --accent-bg: rgba(229, 192, 123, 0.15);
+  --border: #333333;
 }
 
 *, *::before, *::after {
@@ -14,8 +24,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: oklch(0.1 0.02 280);
-  color: oklch(0.95 0.01 280);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
