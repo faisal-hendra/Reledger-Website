@@ -1,11 +1,21 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
+import Footer from "../components/Footer.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const APP_NAME = "Reledger";
+const TAGLINE =
+    "A personal ledger and financial journaling desktop application.";
+const GITHUB_URL = "https://github.com/faisal-hendra/Reledger/";
+const DOWNLOAD_URL = "https://github.com/faisal-hendra/Reledger/releases/";
+const DEVELOPER_NAME = "Faisal Hendra";
 ---
 
 <Layout>
-	<Welcome />
+    <main>
+        <Hero title={APP_NAME} tagline={TAGLINE} downloadUrl={DOWNLOAD_URL} />
+        <Features />
+    </main>
+    <Footer githubUrl={GITHUB_URL} developerName={DEVELOPER_NAME} />
 </Layout>

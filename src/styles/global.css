@@ -1,0 +1,21 @@
+:root {
+  --font-display: 'Playfair Display', serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: oklch(0.1 0.02 280);
+  color: oklch(0.95 0.01 280);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

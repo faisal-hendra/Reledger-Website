@@ -1,0 +1,172 @@
+---
+interface Feature {
+    title: string;
+    description: string;
+}
+
+const features: Feature[] = [
+    {
+        title: "Financial Dashboard",
+        description:
+            "Get a clear overview of your total balance, income, and expenses with interactive charts and month-over-month comparisons.",
+    },
+    {
+        title: "Transaction Management",
+        description:
+            "Full CRUD operations for income and expenses with predefined categories, advanced filtering, and sortable data tables.",
+    },
+    {
+        title: "100% Local & Private",
+        description:
+            "Your financial data stays on your device. Built with SQLite for lightweight, offline-first storage with no cloud dependencies.",
+    },
+    {
+        title: "CSV Export",
+        description:
+            "Export your transaction history to CSV format. Filter by date range or export your full dataset.",
+    },
+];
+---
+
+<section class="features">
+    <div class="features-container">
+        <h2 class="features-heading">Features</h2>
+        <p class="features-subheading">
+            Everything you need to track your personal finances
+        </p>
+
+        <div class="features-grid">
+            {
+                features.map((feature, index) => (
+                    <article
+                        class="feature-card"
+                        style={`--delay: ${index * 0.1}s`}
+                    >
+                        <div class="feature-number">
+                            {String(index + 1).padStart(2, "0")}
+                        </div>
+                        <h3 class="feature-title">{feature.title}</h3>
+                        <p class="feature-description">{feature.description}</p>
+                    </article>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .features {
+        padding: 8rem 2rem;
+        background: oklch(0.1 0.02 280);
+        position: relative;
+    }
+
+    .features-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .features-heading {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 600;
+        color: oklch(0.98 0.01 280);
+        margin: 0 0 0.75rem;
+        text-align: center;
+    }
+
+    .features-subheading {
+        font-family:
+            system-ui,
+            -apple-system,
+            sans-serif;
+        font-size: 1.125rem;
+        color: oklch(0.55 0.02 280);
+        margin: 0 0 4rem;
+        text-align: center;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2rem;
+    }
+
+    .feature-card {
+        position: relative;
+        padding: 2rem;
+        background: linear-gradient(
+            135deg,
+            oklch(0.12 0.02 280),
+            oklch(0.1 0.02 280)
+        );
+        border: 1px solid oklch(0.18 0.02 280);
+        border-radius: 1rem;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        animation: slideUp 0.8s ease-out backwards;
+        animation-delay: var(--delay);
+    }
+
+    .feature-card:hover {
+        transform: translateY(-4px);
+        border-color: oklch(0.25 0.02 280);
+        box-shadow: 0 20px 40px -10px oklch(0 0 0 / 0.3);
+    }
+
+    .feature-number {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: oklch(0.4 0.02 280);
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.1em;
+    }
+
+    .feature-title {
+        font-family:
+            system-ui,
+            -apple-system,
+            sans-serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: oklch(0.95 0.01 280);
+        margin: 0 0 0.75rem;
+    }
+
+    .feature-description {
+        font-family:
+            system-ui,
+            -apple-system,
+            sans-serif;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        color: oklch(0.6 0.02 280);
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .features {
+            padding: 5rem 1.5rem;
+        }
+
+        .features-grid {
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+        }
+    }
+</style>
